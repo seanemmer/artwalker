@@ -18,8 +18,9 @@ development:
   adapter: postgresql
   encoding: unicode
   database: sipper_v1_development
+  host: localhost
   pool: 5
-  username: sipper_v1
+  username: SEmmer
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -47,8 +48,9 @@ test:
   adapter: postgresql
   encoding: unicode
   database: sipper_v1_test
+  host: localhost
   pool: 5
-  username: sipper_v1
+  username: SEmmer
   password:
 
 production:
@@ -56,5 +58,5 @@ production:
   encoding: unicode
   database: sipper_v1_production
   pool: 5
-  username: sipper_v1
+  username: SEmmer
   password:
