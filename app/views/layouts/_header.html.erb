@@ -14,10 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
-        <li><%= link_to "Home", 'placeholder' %></li>
-        <li><%= link_to "Help", 'placeholder' %></li>
-        <li><%= link_to "About", 'placeholder' %></li>
-        <li><%= link_to "Log in", 'placeholder' %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <% if signed_in? %>
+          <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

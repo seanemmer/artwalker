@@ -1,16 +1,15 @@
-<div class="container">
-	<div class="center jumbotron">
-		<h1>Welcome to Sipper!</h1>
-		<p>Charge optimization for electric vehicles</p>
+<% provide(:title, 'Home') %>
+<div class="center jumbotron">
+	<h1>Welcome to Sipper!</h1>
+	<h2>Charge optimization for electric vehicles</h2>
 
-		<%= link_to 'placeholder', class: "btn btn-primary btn-lg" do %>
-			Learn More
-		<% end %>
-        </br>
-        <button class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal">
-        	<span class="glyphicon glyphicon-flash"></span>Log In
-        </button>
-	</div>
+	<%= link_to 'placeholder', class: "btn btn-primary btn-lg" do %>
+		Learn More
+	<% end %>
+    </br>
+    <button class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal">
+    	<span class="glyphicon glyphicon-flash"></span>Sign In
+    </button>
 </div>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -21,23 +20,20 @@
 	        <h4 class="modal-title" id="myModalLabel">Please provide your login credentials:</h4>
 	      </div>
 	      <div class="modal-body">
-	      	<form role="form">
-	      		<div class="form group">
-	      			<label for="inputEmail">Email address</label>
-	      			<input type="email" class="form-control" id="inputEmail" placeholder="Enter email">
-	      		</div>
-	      		</br>
-	      		<div class="form group">
-	      			<label for="inputPassword">Password</label>
-	      			<input type="password" class="form-control" id="inputPassword" placeholder="Password">
-	      		</div>
-	      		</br>
-	      		<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Log In</button>
+	      		
+			<%= form_tag sessions_path do %>
+				<div class="form group">
+				  <%= label_tag :email %>
+				  <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "Enter email" %>
+				</div>
+				<div class="form group">
+				  <%= label_tag :password %>
+				  <%= password_field_tag :password, nil, class: "form-control", placeholder: "Password" %>
+				</div>
+			</br>
+			  <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+			<% end %>
+
 	      </div>
 	    </div>
 	  </div>
