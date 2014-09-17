@@ -1,0 +1,39 @@
+<div class="center jumbotron">
+	<h1>Welcome to Sipper!</h1>
+	<h2>Charge optimization for electric vehicles</h2>
+
+	<%= link_to 'placeholder', class: "btn btn-primary btn-lg" do %>
+		Learn More
+	<% end %>
+    </br>
+    <button class="btn btn-link btn-lg" data-toggle="modal" data-target="#signinModal">
+    	<span class="glyphicon glyphicon-flash"></span>Sign In
+    </button>
+</div>
+
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Please provide your login credentials:</h4>
+	      </div>
+	      <div class="modal-body">
+	      		
+			<%= form_tag sessions_path do %>
+				<div class="form group">
+				  <%= label_tag :email %>
+				  <%= text_field_tag :email, params[:email], class: "form-control", placeholder: "Enter email" %>
+				</div>
+				<div class="form group">
+				  <%= label_tag :password %>
+				  <%= password_field_tag :password, nil, class: "form-control", placeholder: "Password" %>
+				</div>
+			</br>
+			  <%= submit_tag "Sign in", class: "btn btn-large btn-primary" %><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>
+			<% end %>
+
+	      </div>
+	    </div>
+	  </div>
+</div>
