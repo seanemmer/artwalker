@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-SipperV1::Application.config.secret_key_base = '505e20c05cc9e09ee00db2edaefce999cf55e02cb4c35372dd7eb22de754488f9002e209edd777a2df47b1f633c2fd8e0054c6ac780604115a024906da41133f'
+Sandbox1::Application.config.secret_key_base = '505e20c05cc9e09ee00db2edaefce999cf55e02cb4c35372dd7eb22de754488f9002e209edd777a2df47b1f633c2fd8e0054c6ac780604115a024906da41133f'

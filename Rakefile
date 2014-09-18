@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-SipperV1::Application.load_tasks
+Sandbox1::Application.load_tasks

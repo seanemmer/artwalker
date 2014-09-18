@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
-SipperV1::Application.initialize!
+Sandbox1::Application.initialize!

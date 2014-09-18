@@ -126,6 +126,8 @@ GEM
     rake (10.3.2)
     rdoc (3.12.2)
       json (~> 1.4)
+    rename (1.0.2)
+      rails (>= 3.0.0)
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
@@ -203,6 +205,7 @@ DEPENDENCIES
   pg (= 0.15.1)
   rails (= 4.0.8)
   rails_12factor (= 0.0.2)
+  rename
   rest-client (= 1.7.2)
   rspec-rails (= 2.13.1)
   sass-rails (= 4.0.3)

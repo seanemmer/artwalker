@@ -11,21 +11,21 @@ describe "Static pages" do
 
     it "should have the title 'Home'" do
       visit root_path
-      expect(page).to have_title("Sipper | Home")
+      expect(page).to have_title("Home")
     end
   end
 
   describe "Help page" do
   	it "should have the title 'Help'" do
       visit help_path
-      expect(page).to have_title("Sipper | Help")
+      expect(page).to have_title("Help")
     end
   end
 
   describe "About page" do
   	it "should have the title 'About'" do
       visit about_path
-      expect(page).to have_title("Sipper | About")
+      expect(page).to have_title("About")
     end
   end
 

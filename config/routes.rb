@@ -1,4 +1,4 @@
-SipperV1::Application.routes.draw do
+Sandbox1::Application.routes.draw do
 
   root 'static_pages#home'
   match '/help',   to: 'static_pages#help',   via: 'get'
