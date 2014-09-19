@@ -60,6 +60,12 @@ p {
   line-height: 1.7em;
 }
 
+/* header */
+
+.navbar {
+  border-radius: 0;
+}
+
 /* footer */
 
 footer {
@@ -85,6 +91,13 @@ footer {
     }
   }
 }
+
+/* map */
+
+ #map-canvas {
+   height: 384px;
+   width: 100%;
+ }
 
 /* miscellaneous */
 

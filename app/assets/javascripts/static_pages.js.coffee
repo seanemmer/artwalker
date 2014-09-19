@@ -1,3 +1,20 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ ->
+    initialize()
+
+initialize = ->
+  directionsDisplay = new google.maps.DirectionsRenderer()
+  directionsService = new google.maps.DirectionsService()
+  mapOptions =  
+    zoom: 10
+  map = new google.maps.Map $('#map-canvas')[0], mapOptions
+  directionsDisplay.setMap(map)
+  
+  start = $('#start')[0]
+  end = $('#end')[0]
+  request = 
+    origin: 'New York'
+    destination: 'Miami'
+    travelMode: google.maps.TravelMode.DRIVING
+  directionsService.route(request, (result, status) ->
+    if status == google.maps.DirectionsStatus.OK   
+      directionsDisplay.setDirections(result))

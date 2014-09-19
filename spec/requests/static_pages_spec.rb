@@ -29,4 +29,10 @@ describe "Static pages" do
     end
   end
 
+  describe "About page" do
+    it "should have the title 'Map'" do
+      visit map_path
+      expect(page).to have_title("Map")
+    end
+  end
 end

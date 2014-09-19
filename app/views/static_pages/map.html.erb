@@ -1,0 +1,9 @@
+<% provide(:title, 'Map') %>
+<% content_for(:js) do %>
+	<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBP-u-4JpHxGS3bIXI3BzTo2Yw8Q3kw9TM", "data-turbolinks-track" => true %>
+<% end %>
+
+<h1>World Map</h1>
+<div id="map-canvas">
+</div>
+
