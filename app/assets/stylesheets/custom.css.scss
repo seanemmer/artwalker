@@ -92,10 +92,29 @@ footer {
   }
 }
 
+/* core app */
+
+#coreApp {
+  height: 450px;
+}
+
+#gallerySelector {
+  height: 300px;
+  overflow: auto;
+}
+
+#galleryDetail {
+  height: 150px;
+}
+
+.selectedGallery { 
+  background-color: #dbefff;
+}
+
 /* map */
 
  #map-canvas {
-   height: 384px;
+   height: 450px;
    width: 100%;
  }
 
@@ -108,3 +127,4 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+

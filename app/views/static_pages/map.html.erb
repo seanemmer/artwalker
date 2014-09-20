@@ -3,7 +3,21 @@
 	<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyBP-u-4JpHxGS3bIXI3BzTo2Yw8Q3kw9TM", "data-turbolinks-track" => true %>
 <% end %>
 
-<h1>World Map</h1>
-<div id="map-canvas">
+<h1>My Artwalk</h1>
+<div class="container" id="coreApp">
+	<div class="row">
+		<div class="col-xs-4">
+			<div class="row" id="gallerySelector">
+				<%= render 'shared/gallery_list' %>
+			</div>
+			<div class="row" id="galleryDetail">
+				<%= render 'shared/gallery_detail' %>
+			</div>
+		</div>		
+		<div class="col-xs-8" >
+			<div id="map-canvas">
+			</div>
+		</div>
+	</div>
 </div>
 
