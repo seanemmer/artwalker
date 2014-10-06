@@ -1,1 +1,22 @@
-Detail
+<div>
+	<h4 id="galleryName"><%= @gallery.name %></h4>
+	<h6 id="galleryAddress"><%= @gallery.address %></h6>
+	<h6 id="galleryWebsite"><%= @gallery.website %></h6>
+	<div id="galleryDescription">
+		<small><%= @gallery.description %></small>
+	</div>
+</div>
+<div class="btn-group" id="selectRadio" data-toggle="buttons">
+  <label class="btn btn-success">
+    <input type="radio" name="options" value="startGallery" id="startGallery"> Start
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" value="middleGallery"> Middle
+  </label>
+  <label class="btn btn-success">
+    <input type="radio" name="options" value="endGallery"> End
+  </label>
+    <label class="btn btn-default">
+    <input type="radio" name="options" value="removeGallery" checked> None
+  </label>
+</div>  

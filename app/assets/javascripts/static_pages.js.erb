@@ -1,0 +1,114 @@
+var directionsDisplay
+var directionsService
+var map
+var icon
+var start
+var end
+var waypointArray = []
+
+/*====================================================================================*/
+// ready handler
+
+$(function() {
+  initialize();
+
+  // gallery list and description
+  $('#galleryList li').click(function() {
+      $('#galleryList li').removeClass("selectedGallery")
+      var galleryId = $(this).attr('Value')
+      $.get('gallerydata', { gallery_id: galleryId } ,function(data) {
+        $('#galleryDetail').html(data)
+      })
+      $(this).addClass("selectedGallery")
+  })
+
+  // generate button
+  $('#generateButton').click(function() {
+    if ($('.start').length!=1 || $('.start').length!=1 ) {
+      alert("Please select one start and one end!")
+    }
+    else {
+    calcRoute()
+  }
+  })
+
+  //directions panel toggle
+  $('#directionsPanel').hide()
+  $('#mapButton').click(function() {
+    $('#directionsPanel').hide()
+    $('#map-canvas').show()
+  })
+  $('#directionsButton').click(function() {
+    if (start) {
+      $('#map-canvas').hide()
+      $('#directionsPanel').show()
+    }
+    else { alert("Please generate your Artwalk!")}
+  })
+})
+
+/*====================================================================================*/
+// route generator
+
+$(document).on("change",'#selectRadio',function() {
+  $('.selectedGallery').removeClass("start middle end glyphicon glyphicon-play glyphicon-ok glyphicon-stop")
+  switch($('input:radio[name=options]:checked').val()) {
+    case "startGallery":
+        waypointArrayRemove()
+        $('.selectedGallery').addClass("start glyphicon glyphicon-play")
+        start = $('#galleryAddress').text()
+        break;
+    case "middleGallery":
+        $('.selectedGallery').addClass("middle glyphicon glyphicon-ok")
+        waypointArray.push({ location: $('#galleryAddress').text() })
+        break;
+    case "endGallery":
+        waypointArrayRemove()
+        $('.selectedGallery').addClass("end glyphicon glyphicon-stop")
+        end = $('#galleryAddress').text()
+        break;
+    case "removeGallery":
+        waypointArrayRemove()
+    default: 
+  }
+})
+
+function waypointArrayRemove() {
+
+  var indexVal = waypointArray.map(function(obj) { return obj.location }).indexOf($('#galleryAddress').text())
+  waypointArray.splice(indexVal,indexVal >=0)
+
+}
+
+/*====================================================================================*/
+// Google Maps functionality
+
+function initialize() {
+  // Instantiate a directions service
+  directionsService = new google.maps.DirectionsService();
+
+  // Create a map and center it on Miami
+  var miamiCoords = new google.maps.LatLng(25.787925, -80.190052);
+  var mapOptions = {
+    zoom:10,
+    center: miamiCoords
+  }
+  map = new google.maps.Map($('#map-canvas')[0], mapOptions);
+  directionsDisplay = new google.maps.DirectionsRenderer({map: map});
+  directionsDisplay.setPanel($('#directionsPanel')[0])
+}
+
+function calcRoute() {
+  var request = {
+    origin: start,
+    destination: end,
+    waypoints: waypointArray,
+    optimizeWaypoints: true,
+    travelMode: google.maps.TravelMode.WALKING
+  };
+  directionsService.route(request, function(result, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(result);
+    }
+  });
+}

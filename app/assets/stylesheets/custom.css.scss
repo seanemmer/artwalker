@@ -49,7 +49,7 @@ h1 {
 h2 {
   font-size: 1.5em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
@@ -95,29 +95,74 @@ footer {
 /* core app */
 
 #coreApp {
-  height: 450px;
+  height: 500px;
 }
 
 #gallerySelector {
-  height: 300px;
+  height: 250px;
   overflow: auto;
-}
-
-#galleryDetail {
-  height: 150px;
+  border-style: solid;
 }
 
 .selectedGallery { 
   background-color: #dbefff;
 }
 
+#galleryDetail {
+  margin-top: 10px;
+  margin-bottom: -10px;
+  margin-left: 3px;
+  margin-right: -5px;
+  height: 250px;
+}
+
+#galleryDescription {
+  height: 100px;
+  overflow: scroll;
+}
+
+#selectRadio {
+  position: absolute;
+  bottom: 0;
+}
+
+.start {
+
+}
+
+.middle {
+  
+}
+
+.end {
+  
+}
+
 /* map */
 
  #map-canvas {
-   height: 450px;
-   width: 100%;
+  height: 450px;
+  width: 100%;
  }
 
+ #generateContainer {
+  text-align: center;
+ }
+
+ #directionsToggle {
+  margin-left: 60px;
+ }
+
+ #directionsPanel {
+  height: 500px;
+  overflow: auto;
+ }
+
+/* about */
+
+.ulCenter {
+  margin-left:30%;
+}
 /* miscellaneous */
 
 .debug_dump {
@@ -127,4 +172,5 @@ footer {
   margin-top: 45px;
   @include box_sizing;
 }
+
 

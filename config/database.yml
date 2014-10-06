@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: sipper_v1_development
+  database: sandbox1_development
   host: localhost
   pool: 5
   username: SEmmer
@@ -47,7 +47,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: sipper_v1_test
+  database: sandbox1_test
   host: localhost
   pool: 5
   username: SEmmer
@@ -56,7 +56,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: sipper_v1_production
+  database: sandbox1_production
   pool: 5
   username: SEmmer
   password:
