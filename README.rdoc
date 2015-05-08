@@ -4,6 +4,8 @@ Basic Rails app that creates user-generated 'Artwalks', which are unique paths c
 
 Implements the Google Directions API to dynamically solve the Traveling Salesman Problem, finding the shortest possible path that connects each of the art galleries the user has selected.  
 
+
+
 MIT LICENSE
 
 Copyright (c) 2015 Sean Emmer
